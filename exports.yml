@@ -1,0 +1,20 @@
+psp2pkg_fs:
+  attributes: 7
+  version:
+    major: 1
+    minor: 1
+  main:
+    start: module_start
+  libraries:
+    SceKernelPkgfs:
+      version: 1
+      syscall: true
+      functions:
+        - sceKernelMountPackageForUser
+        - sceKernelUmountPackageForUser
+    SceKernelPkgfsForDriver:
+      version: 1
+      syscall: false
+      functions:
+        - _sceKernelMountPackage
+        - _sceKernelUmountPackage
